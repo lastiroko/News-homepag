@@ -1,0 +1,350 @@
+:root {
+--clr-prim-400: hsl(35, 77%, 62%);
+--clr-prim-500: hsl(5, 85%, 63%);
+
+
+--clr-sec-100: hsl(36, 100%, 99%);
+--clr-sec-300: hsl(233, 8%, 79%);
+--clr-sec-600: hsl(236, 13%, 42%);
+--clr-sec-900: hsl(240, 100%, 5%);
+
+--fs-100: 0.9375em;
+
+
+--ff-1: 'Inter', sans-serif;
+
+}
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    max-height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    
+   
+  }
+
+  /*
+    7. Remove built-in form typography styles
+  */a
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1;
+    
+  }
+  .special-h3{
+    color: var(--clr-sec-300);
+  }
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+  h4 {
+    font-size: 1.19rem;
+  }
+  hr {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  p {
+    color: var(--clr-sec-600);
+    font-size: 15px;
+    }
+  .logo{
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* General Styling */
+body{
+    display: grid;
+    max-width: 90%;
+    margin: auto;
+    font-family: var(--ff-1);
+    place-items: center;
+    min-width: 100%;
+    overflow-x: hidden;
+    padding: 2% 6%;
+}
+.flex-grp {
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+.mobile-nav-toggle{
+  display: none;
+}
+.flex-grp-2{
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    list-style: none;
+  
+    
+    
+}
+.nav-item{
+  color: var(--clr-sec-900);
+  font-weight: 700;
+}
+.flex-grp-3 {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.intro {
+    display: grid;
+    display: flex;
+    max-width: 100%;
+    min-width: 100%  ;
+    grid-template-columns: 2fr  1fr;
+  /* gap: 1rem;     */
+    
+}
+.left-component {
+   display: grid;
+margin: 0;
+padding: 0;
+  
+
+
+} 
+h2 {
+    font-weight: 800;
+    font-size: 3.4rem;
+}
+.description{
+    width: 100%;
+    position: relative;
+    
+    gap: 1rem;
+    
+
+}
+.description p {
+    width: 78%;
+    font-size: 15px;
+}
+.btn { 
+
+    padding: .7rem 2.2rem;
+letter-spacing: .2rem;
+border-radius: 0;
+background-color: var(--clr-sec-900);
+color: #fff;
+border: 0;
+font-size: .75rem;
+font-weight: 700;
+position: absolute;
+bottom: 0;
+
+}
+.right-component{
+  background-color: var(--clr-sec-900);
+
+  color: #fff;
+  padding: 1.5rem 1rem;
+  display: grid;
+  gap: 1rem;
+  justify-content: center; 
+  max-width: 25rem;
+  margin-left: 1.7rem;
+
+}
+.right-component p {
+  color: var(--clr-sec-300);
+
+}
+
+.yellow {
+  color: var(--clr-prim-400);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5rem;
+  gap: 1rem;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.flex-grp-4 {
+  display: flex;
+  gap: 1.2rem;
+
+}
+.flex-grp-4 img {
+  height: 7.5rem;
+  
+}
+.grid-flow {
+  display: grid;
+  gap: .5rem;
+}
+
+/* M */
+@media (max-width: 376px) {
+html{
+  max-height: 100%;
+
+}
+  body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-content: center;
+    padding: 7% 5%;
+    place-items: center;
+ 
+    
+  
+
+  }
+  .mobile-nav-toggle{
+    position: absolute;
+    width: 2rem;
+    display: block;
+    border: 0;
+    background-color: transparent;
+    z-index: 999;
+    aspect-ratio: 1;
+    top: 2rem;cursor: pointer;
+    right: 2rem;
+    background: url(/news-homepage-main/assets/images/icon-menu.svg);
+    background-repeat: no-repeat;
+  }
+  .mobile-nav-toggle[aria-expanded = "true"]{
+    background-image: url(/news-homepage-main/assets/images/icon-menu-close.svg);
+    
+   
+  }
+  img{
+    width: 100%;
+   
+  }
+.intro{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+
+
+
+.nav {
+  
+  position: fixed;
+  inset: 0 0 0 29%;
+  transform: translateX(100%);
+  transition: 350ms ease-out;
+  background-color: var(--clr-sec-100);
+  
+}
+.nav[ data-visible ="true"]{
+  transform: translateX(0%);
+}
+
+.flex-grp-2 {
+  display: block;
+  line-height: 2.7rem;
+  text-align: left;
+  padding: 7rem 1rem;
+  
+}
+.flex-grp-3{
+  display: block;
+}
+.bright {
+  width: 100%;
+  margin: .4rem 0 .9rem 0;
+  font-size: 2.5rem;
+}
+.flex-grp-3 p{
+  width: 100%;
+  
+}
+.right-component{
+  width: 100%;
+position: relative;
+margin: 0;
+  
+}
+.btn {
+  margin: 1.6rem 0 4rem ;
+  background-color: var(--clr-prim-500);
+  position: relative;
+
+
+}
+.details{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.details img{
+  height: 4rem;
+ width: 6rem;
+}
+.grid-flow{
+  display: grid;
+  gap: .05rem;
+ 
+}
+
+h4 {
+ font-size: 1.12rem;
+}
+}
